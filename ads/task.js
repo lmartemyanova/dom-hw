@@ -12,12 +12,10 @@ function intervalForAnnouncements (arr, showAnnouncement, delay) {
     let current = 0;
 
     setInterval(() => {
-        if (current === arr.length) {
-            current = 0
-        } else {
-            showAnnouncement(arr, current)
-            current++
-        }
+        
+        showAnnouncement(arr, current)
+        current = (current + 1) % arr.length
+
     }, delay)
 }
 
